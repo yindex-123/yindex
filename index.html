@@ -1,205 +1,445 @@
-@charset "utf-8";
+<!DOCTYPE html><html lang="ja">  <head><meta charset="UTF-8">
 
-html {
-    /* ブラウザのデフォルトが16px                        */
-    /* デフォルトの16pxの代わりに1emが10pxになるように調整 */
-    font-size: 62.5%;
-}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* 「*」はユニバーサルセレクタ（すべての要素を対象にするセレクタ）でbox-sizing: border-box;を指定 */
-/* この指定（してい）はborderとpaddingをボックスサイズ（widthとheight）の中に含めて算出するので、スタイリングがしやすい*/
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+<title>YinDex</title>
 
-body{
-    line-height: 1.5;
-    color: rgb(73, 72, 72);
-    font-size: 1.6rem; /* 16px */
-    font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
-    text-align: center;
-    background-image: url(../img/123.jpg);
-}
+<meta name="description" content="Yin Dex">
 
-/* ✅ khoảng cách chung */
-header, footer, h1, h2, h3, p, div, .container01, .filler01 {
-    margin: 0.2em 0em 0em 0em;
-    padding: 0.1em;
-}
 
-/*****************************/
-/* 見出し（みだし）           */
-/*****************************/
-h1 {
-    font: 2em Rajdhani, "Noto Sans JP";
-    color: rgb(181, 242, 252);
-    background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
-}
 
-h2{
-    padding-left: 0.5em;
-    border-left: solid 0.5em darkgray;
-    text-align: left;
-}
+<link rel="icon" href="favicon.ico">
 
-/*****************************/
-/* ページ                    */
-/*****************************/
-.wrapper {
-    position: relative;/*相対位置*/
-    max-width: 100vw;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 23px;/*footer+paddingの高さ*/
-    text-align: center;
-}
+<link rel="stylesheet" href="css/index.css">
 
-/*****************************/
-/* セクション(section)        */
-/*****************************/
-.container01 {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 0.5em;
-    width: 80%;
-    border-radius: 0.5em 1.5em;
-    background-color:rgba(245, 245, 245, 0.6);
-    box-shadow:0 0 0.5em rgb(73, 72, 72);
-}
+  </head>  <body><!-- 見出し（みだし） -->
 
-main > p {
-    font: 1.2em bold;
-}
+<header class="header">
 
-/*****************************/
-/* アンカー(anchor)           */
-/*****************************/
-a {
-    color: black;
-    font-weight: 900;
-    text-decoration: none;
-}
+  <h1>Webアプリ</h1>
 
-/* mouseoverでグレースケール */
-a:hover{
-    opacity: 0.5;
-    filter: grayscale(100%);
-}
+</header>
 
-/*****************************/
-/* container  item           */
-/*****************************/
 
-/* ✅ dàn icon đều hơn + khoảng cách đều */
-.container01-01 , .container01-02, .container01-03 , .container01-04 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* đều hơn space-evenly */
-    gap: 1.2em;              /* khoảng cách icon */
-    font-size: 0.7em;
-}
 
-/* ✅ item size cố định */
-.item01{
-    position: relative;
-    width: 6em;
-    height: 9em;
-    margin: 0;
-    line-height: 1em;
-    overflow: hidden;
+<!-- 作成したアプリ -->
 
-    /* hiệu ứng */
-    opacity: 0;
-    animation: fadeUp 0.6s ease forwards;
-    transition: transform 0.25s ease;
-}
+<section class="container01">
 
-.item02{
-    position: relative;
-    width: 6em;
-    height: 12em;
-    margin: 0;
-    line-height: 1em;
-    overflow: hidden;
+  <h2>作成したアプリ</h2>
 
-    /* hiệu ứng */
-    opacity: 0;
-    animation: fadeUp 0.6s ease forwards;
-    transition: transform 0.25s ease;
-}
+  <div class="game">
 
-/* ÉP ICON ĐỀU NHAU (QUAN TRỌNG NHẤT) */
-.item01 img,
-.item02 img{
-    width: 6em;
-    height: 6em;          /* ép vuông để tất cả đều nhau */
-    object-fit: contain;  /* giữ nguyên tỉ lệ, không bị méo */
-    display: block;
-    margin: 0 auto;
-}
 
-/*  icon omikuji2 cũng ép giống luôn (không riêng nữa) */
-.item01 .img_omikuji2{
-    width: 6em;
-    height: 6em;
-    object-fit: contain;
-}
 
-/*  hover nhẹ */
-.item01:hover,
-.item02:hover{
-    transform: translateY(-0.3em) scale(1.05);
-}
+    <div class="container01-01">
 
-/*****************************/
-/* hiệu ứng xuất hiện         */
-/*****************************/
-@keyframes fadeUp {
-    from{
-        opacity: 0;
-        transform: translateY(1em);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+      <!-- <div class="item01">
 
-/*  hiện lần lượt */
-.item01:nth-child(1), .item02:nth-child(1){ animation-delay: 0.1s; }
-.item01:nth-child(2), .item02:nth-child(2){ animation-delay: 0.2s; }
-.item01:nth-child(3), .item02:nth-child(3){ animation-delay: 0.3s; }
-.item01:nth-child(4), .item02:nth-child(4){ animation-delay: 0.4s; }
-.item01:nth-child(5), .item02:nth-child(5){ animation-delay: 0.5s; }
-.item01:nth-child(6), .item02:nth-child(6){ animation-delay: 0.6s; }
+        <a href="おみくじ/omikuji.html" title="今日の運勢を占うゲームです。"><img src="img/sakura.jpg" alt="おみくじ１"><br>おみくじ１(未)</a>
 
-/*****************************/
-/* フッター                   */
-/*****************************/
-footer> p {
-    position: absolute;/*←絶対位置*/
-    bottom: 5px; /*下に固定*/
-    width: 100%;
-    margin: 0px;
-    padding: 1px;
-    color: whitesmoke;
-    font: 1em Rajdhani;
-    text-align: center;
-    background: rgba(1, 24, 31, 0.7);
-}
+      </div> -->
 
-/*******************************************************/
-/* レスポンシブ対応　メディアクエリを使ってCSSを切り替える */
-/* mobileのときのスタイル */
-/*******************************************************/
-@media screen and (max-width: 480px) {
-    body{
-        background-size: auto 1000px;
-    }
-} 
+
+
+      <div class="item01">
+
+        <a href="おみくじ１/omikuji.html" title="音付きです。">
+
+          <img src="img/omikuji2.png" alt="おみくじ２" class="img_omikuji2"><br>おみくじ２
+
+        </a>
+
+      </div>
+
+
+
+      <div class="item01">
+
+        <a href="10b_omikuji3/omikuji.html" title="テキストも画像です。">
+
+          <img src="img/omikuji3.png" alt="おみくじ３"><br>おみくじ３
+
+        </a>
+
+      </div>
+
+
+
+      <!-- <div class="item01">
+
+        <a href="01_omikuji_kimetsu/omikuji_kimetsu.html" title="鬼滅の刃"><img src="img/zenitsu.png" alt="鬼滅の刃おみくじ"><br>鬼滅の刃(未)<br>おみくじ</a>
+
+      </div>
+
+    </div> -->
+
+
+
+    <div class="container01-02">
+
+      <!--  <div class="item01">
+
+        <a href="02_calculator_v1/calculator.html" title="かんたんな計算機です。"><img src="img/calc1.jpg" alt="計算機１"><br>計算機１(未)</a>
+
+      </div>
+
+
+
+      <div class="item01">
+
+        <a href="02_calculator_v2/calculator.html" title="=ボタンをつけた計算機です。"><img src="img/calc2.jpg" alt="計算機２"><br>計算機２(未)</a>
+
+      </div> -->
+
+
+
+      <div class="item01">
+
+        <a href="02_calculator_v3/calculator2.html" title="=全部ボタンの計算機です。">
+
+          <img src="img/calc3.jpg" alt="計算機３"><br>計算機３
+
+        </a>
+
+      </div>
+
+
+
+      <div class="item01">
+
+        <a href="98_Time guessing quiz/timeguess.html" title="=時間当てクイズです">
+
+          <img src="img/clock1.png" alt="クイズ">時間当て<br>クイズ
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="container01-03">
+
+      <!--  <div class="item01">
+
+        <a href="04_memo/memo.html" title="メモアプリです。"><img src="img/memo.png" alt="memo"><br>memo(未)</a>
+
+      </div>
+
+
+
+      <div class="item01">
+
+        <a href="04_memo_app_v1/memo.html" title="メモアプリv1です。"><img src="img/memo1.png" alt="memo v1"><br>memo v1(未)</a>
+
+      </div> -->
+
+
+
+      <div class="item01">
+
+        <a href="04_memo_app_v2/memo.html" title="メモアプリv2です。">
+
+          <img src="img/memo2.png" alt="memo v2"><br>memo v2
+
+        </a>
+
+      </div>
+
+
+
+      <!-- <div class="item01">
+
+        <a href="04_memo_app_v3/memo.html" title="メモアプリv3です。"><img src="img/memo3.png" alt="memo v3"><br>memo v3(未)</a>
+
+      </div>
+
+    </div> -->
+
+    </div>
+
+
+
+    <div class="container01-04">
+
+      <!--  <div class="item02">
+
+        <a href="05_tic tac toe_06_sound/tic_tac_toe_fix.html" title="2人でやるゲームです。"><img src="img/azarashi.png" alt="〇✖ゲーム"><br>〇✖ゲーム(未)</a>
+
+      </div>
+
+
+
+      <div class="item02">
+
+        <a href="06_tic tac toe vs computer/tic_tac_toe_vs computer.html" title="vs computerです。"><img src="img/penguin.png" alt="〇✖ゲームvs computer"><br>〇✖ゲームvs computer(未)</a>
+
+      </div>
+
+
+
+      <div class="item02">
+
+        <a href="07_tic tac toe vs computer level/tic_tac_toe_vs computer.html" title="vs computer level付き。"><img src="img/bear.png" alt="〇✖ゲーム"><br>〇✖ゲームvs computer(未)<br>level設定</a>
+
+      </div> -->
+
+
+
+      <div class="item02">
+
+        <a href="page/page.html" title="vs computer level付き。">
+
+          <img src="img/5290 (1).png" alt="aww"><br>aww
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+  <div class="filler01"></div>
+
+</section>
+
+
+
+<!-- フッター -->
+
+<footer>
+
+  <p>Copyright 2025 S247147 Pham Dinh Vy</p>
+
+</footer>
+
+  </body></html>Gửi bản full để icon đều nhau<!DOCTYPE html><html lang="ja">  <head><meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YinDex</title>
+
+<meta name="description" content="Yin Dex">
+
+
+
+<link rel="icon" href="favicon.ico">
+
+<link rel="stylesheet" href="css/index.css">
+
+  </head>  <body><!-- 見出し（みだし） -->
+
+<header class="header">
+
+  <h1>Webアプリ</h1>
+
+</header>
+
+
+
+<!-- 作成したアプリ -->
+
+<section class="container01">
+
+  <h2>作成したアプリ</h2>
+
+  <div class="game">
+
+
+
+    <div class="container01-01">
+
+      <!-- <div class="item01">
+
+        <a href="おみくじ/omikuji.html" title="今日の運勢を占うゲームです。"><img src="img/sakura.jpg" alt="おみくじ１"><br>おみくじ１(未)</a>
+
+      </div> -->
+
+
+
+      <div class="item01">
+
+        <a href="おみくじ１/omikuji.html" title="音付きです。">
+
+          <img src="img/omikuji2.png" alt="おみくじ２" class="img_omikuji2"><br>おみくじ２
+
+        </a>
+
+      </div>
+
+
+
+      <div class="item01">
+
+        <a href="10b_omikuji3/omikuji.html" title="テキストも画像です。">
+
+          <img src="img/omikuji3.png" alt="おみくじ３"><br>おみくじ３
+
+        </a>
+
+      </div>
+
+
+
+      <!-- <div class="item01">
+
+        <a href="01_omikuji_kimetsu/omikuji_kimetsu.html" title="鬼滅の刃"><img src="img/zenitsu.png" alt="鬼滅の刃おみくじ"><br>鬼滅の刃(未)<br>おみくじ</a>
+
+      </div>
+
+    </div> -->
+
+
+
+    <div class="container01-02">
+
+      <!--  <div class="item01">
+
+        <a href="02_calculator_v1/calculator.html" title="かんたんな計算機です。"><img src="img/calc1.jpg" alt="計算機１"><br>計算機１(未)</a>
+
+      </div>
+
+
+
+      <div class="item01">
+
+        <a href="02_calculator_v2/calculator.html" title="=ボタンをつけた計算機です。"><img src="img/calc2.jpg" alt="計算機２"><br>計算機２(未)</a>
+
+      </div> -->
+
+
+
+      <div class="item01">
+
+        <a href="02_calculator_v3/calculator2.html" title="=全部ボタンの計算機です。">
+
+          <img src="img/calc3.jpg" alt="計算機３"><br>計算機３
+
+        </a>
+
+      </div>
+
+
+
+      <div class="item01">
+
+        <a href="98_Time guessing quiz/timeguess.html" title="=時間当てクイズです">
+
+          <img src="img/clock1.png" alt="クイズ">時間当て<br>クイズ
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="container01-03">
+
+      <!--  <div class="item01">
+
+        <a href="04_memo/memo.html" title="メモアプリです。"><img src="img/memo.png" alt="memo"><br>memo(未)</a>
+
+      </div>
+
+
+
+      <div class="item01">
+
+        <a href="04_memo_app_v1/memo.html" title="メモアプリv1です。"><img src="img/memo1.png" alt="memo v1"><br>memo v1(未)</a>
+
+      </div> -->
+
+
+
+      <div class="item01">
+
+        <a href="04_memo_app_v2/memo.html" title="メモアプリv2です。">
+
+          <img src="img/memo2.png" alt="memo v2"><br>memo v2
+
+        </a>
+
+      </div>
+
+
+
+      <!-- <div class="item01">
+
+        <a href="04_memo_app_v3/memo.html" title="メモアプリv3です。"><img src="img/memo3.png" alt="memo v3"><br>memo v3(未)</a>
+
+      </div>
+
+    </div> -->
+
+    </div>
+
+
+
+    <div class="container01-04">
+
+      <!--  <div class="item02">
+
+        <a href="05_tic tac toe_06_sound/tic_tac_toe_fix.html" title="2人でやるゲームです。"><img src="img/azarashi.png" alt="〇✖ゲーム"><br>〇✖ゲーム(未)</a>
+
+      </div>
+
+
+
+      <div class="item02">
+
+        <a href="06_tic tac toe vs computer/tic_tac_toe_vs computer.html" title="vs computerです。"><img src="img/penguin.png" alt="〇✖ゲームvs computer"><br>〇✖ゲームvs computer(未)</a>
+
+      </div>
+
+
+
+      <div class="item02">
+
+        <a href="07_tic tac toe vs computer level/tic_tac_toe_vs computer.html" title="vs computer level付き。"><img src="img/bear.png" alt="〇✖ゲーム"><br>〇✖ゲームvs computer(未)<br>level設定</a>
+
+      </div> -->
+
+
+
+      <div class="item02">
+
+        <a href="page/page.html" title="vs computer level付き。">
+
+          <img src="img/5290 (1).png" alt="aww"><br>aww
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+  <div class="filler01"></div>
+
+</section>
+
+
+
+<!-- フッター -->
+
+<footer>
+
+  <p>Copyright 2025 S247147 Pham Dinh Vy</p>
+
+</footer>
+
+  </body></html>Gửi bản full để icon đều nhau  
